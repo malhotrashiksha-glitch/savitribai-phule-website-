@@ -1,1 +1,94 @@
 
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savitribai Phule - Next Level</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><style>
+body {margin:0; font-family:'Poppins', sans-serif; scroll-behavior:smooth; background:#0f172a; color:#e2e8f0;}
+
+nav {
+  position:fixed; top:0; width:100%; background:rgba(15,23,42,0.9);
+  display:flex; justify-content:center; gap:30px; padding:15px; z-index:1000;
+}
+nav a {color:white; text-decoration:none; font-weight:500;}
+nav a:hover {color:#38bdf8;}
+
+section {padding:100px 20px; text-align:center;}
+
+.hero {
+  background:linear-gradient(135deg,#1e3a8a,#9333ea);
+  color:white;
+}
+
+h1 {font-size:3em;}
+
+.card {
+  max-width:900px; margin:30px auto; padding:30px; border-radius:20px;
+  background:#1e293b; box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.timeline div {
+  margin:15px 0; padding-left:20px; border-left:3px solid #38bdf8;
+}
+
+.fade {opacity:0; transform:translateY(40px); transition:1s ease;}
+.fade.show {opacity:1; transform:translateY(0);}
+
+.counter {font-size:2em; color:#38bdf8;}
+
+button {
+  padding:12px 25px; border:none; border-radius:25px;
+  background:#38bdf8; color:black; cursor:pointer;
+}
+button:hover {transform:scale(1.1);}
+
+footer {background:#020617; padding:20px;}
+</style></head><body><nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#legacy">Legacy</a>
+</nav><section class="hero fade" id="home">
+  <h1>Savitribai Phule</h1>
+  <p>Pioneer of Education & Equality</p>
+  <button onclick="scrollToSection()">Start Exploring</button>
+</section><section class="card fade" id="about">
+  <h2>About</h2>
+  <p>Savitribai Phule was India’s first female teacher and a revolutionary who fought for women's rights and education.</p>
+</section><section class="card fade">
+  <h2>Impact</h2>
+  <div class="counter" id="schools">0</div>
+  <p>Schools Inspired</p>
+</section><section class="card fade" id="timeline">
+  <h2>Timeline</h2>
+  <div class="timeline">
+    <div>1831 - Born</div>
+    <div>1848 - First girls' school</div>
+    <div>1850s - Social reforms</div>
+    <div>1897 - Passed away</div>
+  </div>
+</section><section class="card fade" id="legacy">
+  <h2>Legacy</h2>
+  <p>She continues to inspire millions towards equality and education.</p>
+</section><footer>
+  <p>Next Level Website | No Branding</p>
+</footer><script>
+const elements = document.querySelectorAll('.fade');
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const pos = el.getBoundingClientRect().top;
+    if(pos < window.innerHeight - 50){ el.classList.add('show'); }
+  });
+});
+
+function scrollToSection(){ document.getElementById('about').scrollIntoView({behavior:'smooth'}); }
+
+let count = 0;
+const counter = document.getElementById('schools');
+const interval = setInterval(()=>{
+  count += 5;
+  counter.innerText = count;
+  if(count >= 100){ clearInterval(interval); }
+}, 50);
+</script></body>
+</ht<<html>
